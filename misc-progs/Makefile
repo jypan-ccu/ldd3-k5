@@ -4,7 +4,7 @@ FILES = asynctest nbtest load50 mapcmp polltest mapper setlevel setconsole inp o
 
 KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 INCLUDEDIR = $(KERNELDIR)/include
-CFLAGS = -O2 -fomit-frame-pointer -Wall -I$(INCLUDEDIR)
+CFLAGS = -O2 -fomit-frame-pointer -Wall -Wno-unused-result -I$(INCLUDEDIR)
 
 all: $(FILES)
 

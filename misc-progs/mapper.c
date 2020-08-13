@@ -24,6 +24,7 @@
 #include <sys/mman.h>
 #include <errno.h>
 #include <limits.h>
+void exit(int status);  //disable exit() warning
 
 int main(int argc, char **argv)
 {
