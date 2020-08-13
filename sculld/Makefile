@@ -26,9 +26,9 @@ KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 PWD       := $(shell pwd)
 
 modules:
-	echo "Copying Module.symvers to resolve lddbus exports"
-	cp $(PWD)/../lddbus/Module.symvers $(PWD)
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+#	echo "Copying Module.symvers to resolve lddbus exports"
+#	cp $(PWD)/../lddbus/Module.symvers $(PWD)
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) KBUILD_EXTRA_SYMBOLS=$(PWD)/../lddbus/Module.symvers  modules
 
 endif
 
